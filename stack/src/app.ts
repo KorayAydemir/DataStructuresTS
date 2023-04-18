@@ -1,0 +1,36 @@
+class Stack {
+  _storage: { [key: number]: any };
+  _length: number;
+
+  constructor() {
+    this._storage = {};
+    this._length = 0;
+  }
+
+  push(value: any) {
+    this._storage[this._length] = value;
+    this._length++;
+  }
+
+  pop() {
+    const lastVal = this._storage[this._length - 1];
+    this._storage[this._length - 1] = undefined;
+    this._length--;
+    return lastVal
+  }
+
+  peek() {
+    console.log(this._storage[this._length - 1])
+  }
+
+}
+const myStack = new Stack();
+
+myStack.push(9)
+myStack.push(7)
+myStack.pop()
+myStack.peek()
+myStack.push(4)
+myStack.peek()
+
+console.log(myStack);
